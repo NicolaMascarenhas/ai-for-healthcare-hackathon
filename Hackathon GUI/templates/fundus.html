@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<li class="nav-item">
+  <a class="nav-link" aria-current="page" href="/">Classification on Retinal OCT Scans</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="/fundus">Classification on Fundus Images</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" aria-current="page" href="/segmentation">Segmentation on Retinal OCT Scans</a>
+</li>
+{% endblock %}
+
+{% block header %}
+<div class="title">
+  <h1 class="text-center mt-4">Theme 2: Deep Learning Multiple Diseases Prediction Model based on Retina Image</h1>
+  
+  <h3 class="text-center mt-3">Classification on Multiple Diseases using Fundus Scans</h3>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!--div class="panel">
+  <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+  < label for="file-upload" id="file-drag" class="upload-box">
+    <div id="upload-caption">Drop image here or click to select</div>
+    <img id="image-preview" class="hidden" />
+  </label>
+</div -->
+<h5 class="mt-4 text-center mb-3">
+  <small>Upload a valid Fundus scan image and get predictions of possible complications between Glaucoma, Diabetes, AMD, Hypertension and corresponding heatmaps.</small>
+</h5>
+<div class="panel mb-4 text-center">
+  <input autocomplete="off" class="form-control form-control-lg" id="file-upload" type="file" accept="image/x-png,image/gif,image/jpeg">
+</div>
+
+<div id="image-row" class="">
+  <div class="col-md-6">
+    <img class="hidden mb-4 img-fluid" id="image-display" />
+  </div>
+  
+  <div class="col-md-6">
+    <img class="hidden mb-4 img-fluid" id="heatmap-display"/>
+  </div>
+  
+</div>
+
+<div id="predLinks" class="hidden mb-4">
+  <h3 id="pred-result" class="hidden"></h3>
+  <div id="loader" class="hidden spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div style="width: 15rem;" class="d-grid gap-2 mx-auto mb-4">
+    <input type="button" value="Predict" class="btn btn-primary btn-lg" onclick="submitImage();" />
+    <input type="button" value="Clear" class="btn btn-secondary btn-lg" onclick="clearImage();" />
+</div>
+
+
+
+{% endblock %}
