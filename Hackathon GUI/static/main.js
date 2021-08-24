@@ -116,7 +116,9 @@ function displayResult(data) {
   add(imageRow, "gx-5");
   add(imageRow, "row");
 
-  predResult.innerHTML = "Prediction: "+ data.result + " (" + data.probability + ")";
+  if (data.result != "") {
+    predResult.innerHTML = "Prediction: "+ data.result + " (" + data.probability + ")";
+  }
   heatDisplay.src = data.heatmap;
   show(heatDisplay);
   show(predResult);

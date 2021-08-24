@@ -6,7 +6,7 @@ import tensorflow as tf
 import matplotlib.cm as cm
 import numpy as np
 
-def generate_heatmap(img, modelPath, last_conv_layer_name):
+def generate_heatmap(img, modelPath, last_conv_layer_name, last_layer_name,):
     # model_builder = tf.keras.applications.vgg16.VGG16
     # model = model_builder(weights="models/vgg16_weights_tf_dim_ordering_tf_kernels.h5")
 
@@ -19,15 +19,15 @@ def generate_heatmap(img, modelPath, last_conv_layer_name):
     img_array = np.true_divide(img_array, 255)
     img_array = np.expand_dims(img_array, axis=0)
 
-    heatmap = make_gradcam_heatmap(img_array, model, last_conv_layer_name)
+    heatmap = make_gradcam_heatmap(img_array, model, last_conv_layer_name, last_layer_name,)
 
     return save_and_display_gradcam(img, heatmap)
 
-def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None):
+def make_gradcam_heatmap(img_array, model, last_conv_layer_name, last_layer_name, pred_index=None):
     # First, we create a model that maps the input image to the activations
     # of the last conv layer as well as the output predictions
 
-    grad_model = tf.keras.models.Model([model.inputs], [model.get_layer(last_conv_layer_name).output, model.output])
+    grad_model = tf.keras.models.Model([model.inputs], [model.get_layer(last_conv_layer_name).output, model.get_layer(last_layer_name).output])
 
     # Then, we compute the gradient of the top predicted class for our input image
     # with respect to the activations of the last conv layer
