@@ -52,8 +52,8 @@ def ensemble_predictions(members, weights, testX):
     return int(result), pred_proba
 
 #OCT MODEL
-VGG_MODEL_PATH = 'models/vgg_kermany+duke+tehran.h5'
-OPTICNET_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
+VGG_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets/vgg_kermanyduketehran.h5'  #'models/vgg_kermany+duke+tehran.h5'
+OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets/opticnet_kermanyduketehran.h5' #'models/opticnet_kermany+duke+tehran.h5'
 
 # #FUNDUS MODEL
 # FUNDUS_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
@@ -61,9 +61,9 @@ OPTICNET_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
 # fundus_model.make_predict_function()
 
 #SEGMENT MODEL
-SEGMENT_MODEL_PATH = 'models/unet_aroi.hdf5'
-####segment_model = load_model(SEGMENT_MODEL_PATH, custom_objects={'iou': iou})
-####segment_model.make_predict_function()
+SEGMENT_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets/unet_aroi.hdf5' #'models/unet_aroi.hdf5'
+segment_model = load_model(SEGMENT_MODEL_PATH, custom_objects={'iou': iou})
+segment_model.make_predict_function()
 
 print('Models loaded. Start serving...')
 choice = 0
@@ -144,8 +144,8 @@ def predict():
         # For segmentation
         elif choice==2:
             # Get the image from post request
-            pass
-            #######img = base64_to_pil(request.json)
+            #pass
+            img = base64_to_pil(request.json)
 
             # Save the image to ./uploads
             # img.save("./uploads/image.png")
@@ -157,14 +157,14 @@ def predict():
             # pred_proba = "{:.3f}".format(np.amax(preds))   # Max probability
             # pred_class = int(np.argmax(preds, axis = 1))   # ImageNet Decode
 
-            #######mask = show(segment_model, img)
-            #######mask = pil_tobase64(mask)
+            mask = show(segment_model, img)
+            mask = pil_tobase64(mask)
             # result = str(pred_class[0][0][1])               # Convert to string
             # result = result.replace('_', ' ').capitalize()
 
             
             # Serialize the result, you can add additional fields
-            #######return jsonify(result='', probability='', heatmap = mask)
+            return jsonify(result='', probability='', heatmap = mask)
         # For OCT classification
         else:
             # Get the image from post request
