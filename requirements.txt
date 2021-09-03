@@ -12,6 +12,6 @@ Jinja2>=3.0
 MarkupSafe==1.1.1
 Werkzeug>=2.0
 regex
-io
-sys
 base64
+sys
+io==0.0.1
