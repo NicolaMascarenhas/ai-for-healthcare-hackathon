@@ -1,7 +1,0 @@
-Model	Optimizer		Dataset				ClassWeights?	TrainAcc	ValAcc	TestAcc	Link
-VGG	SGD		kermany(kermany test)		No		91.87%	92.41%	96.07%	https://www.kaggle.com/itsmariodias/oct-dataset-transfer-learn/output	
-VGG	Adam		kermany+dataverse			No		93.25%	89.62%	89.62%	https://www.kaggle.com/itsmariodias/kermany18-oct-combined-datasets-3-class-optic?scriptVersionId=72421824
-OpticNet	Adam		kermany+dataverse			No		92.86%	92.04%	92.04%	https://www.kaggle.com/itsmariodias/kermany-dataverse-3-class-opticnet
-VGG	SGD		kermany+duke+tehran(dataverse test)	No		95.92%	96.90%	89.40%	https://www.kaggle.com/itsmariodias/kermany18-oct-combined-datasets-3-class-vgg?scriptVersionId=72763735
-OpticNet	Adam		kermany+duke+tehran(dataverse test)	No		96.12%	93.66%	60.86%	https://www.kaggle.com/itsmariodias/kermany18-oct-combined-datasets-3-class-optic?scriptVersionId=72840870
-VGG	SGD		kermany+dataverse+tehran(duke test)	Yes		95.52%	95.92%	88.30%	https://www.kaggle.com/itsmariodias/kermany18-oct-combined-datasets-3-class-vgg/output	

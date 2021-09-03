@@ -1,0 +1,4 @@
+Hackathon[[:space:]]GUI/*.h5 filter=lfs diff=lfs merge=lfs -text
+Hackathon[[:space:]]GUI/models/*.h5 filter=lfs diff=lfs merge=lfs -text
+models/*.h5 filter=lfs diff=lfs merge=lfs -text
+models/*.hdf5 filter=lfs diff=lfs merge=lfs -text

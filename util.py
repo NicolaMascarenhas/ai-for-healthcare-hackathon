@@ -1,22 +1,16 @@
-"""Utilities
-"""
+"""Utilities """
 import re
 import base64
-
 import numpy as np
-
 from PIL import Image
 from io import BytesIO
 
-
 def base64_to_pil(img_base64):
-    """
-    Convert base64 image data to PIL image
-    """
+    # Convert base64 image data to PIL image
+    
     image_data = re.sub('^data:image/.+;base64,', '', img_base64)
     pil_image = Image.open(BytesIO(base64.b64decode(image_data))).convert('RGB')
     return pil_image
-
 
 def pil_tobase64(img):
     buffer = BytesIO()
@@ -24,11 +18,9 @@ def pil_tobase64(img):
     myimage = buffer.getvalue()
     return "data:image/jpeg;base64,"+base64.b64encode(myimage).decode()
 
-
 def np_to_base64(img_np):
-    """
-    Convert numpy image (RGB) to base64 string
-    """
+    # Convert numpy image (RGB) to base64 string
+    
     img = Image.fromarray(img_np.astype('uint8'), 'RGB')
     buffered = BytesIO()
     img.save(buffered, format="PNG")

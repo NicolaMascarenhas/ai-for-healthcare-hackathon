@@ -18,12 +18,6 @@ def show(model, img):
     rescaled = (255.0 / pred_arg.max() * (pred_arg - pred_arg.min())).astype(np.uint8)
     mask_img = Image.fromarray(rescaled)
     
-    # plt.figure(figsize=(12,12))
-    # plt.imshow(pred1)
-    # buffer_ = io.BytesIO()
-    # plt.savefig(buffer_, format = "jpg")
-    # buffer_.seek(0)
-    # mask_img = Image.open(buffer_)
     mask_img = mask_img.resize((h, w))
-    # buffer_.close()
+
     return mask_img
