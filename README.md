@@ -8,3 +8,18 @@ We developed a web application for showcasing the model developed for predicting
 FINAL_kermany18+duke+tehran_xxx notebooks & Hackathon GUI folder have the code & Flask scripts for the implemented GUI.
 
 Link to all pretrained models: https://www.kaggle.com/itsmariodias/pretrained-datasets
+
+To Run GUI:
+open terminal in /Hackathon GUI and enter "python app.py"
+
+In browser type 'http://127.0.0.1:5002/' to access webpage.
+
+There are 3 pages to showcase 3 different implementations.
+Click on Browse and select appropriate image. Image will be displayed on screen
+Then click Predict. After 2-4 seconds predictions will be given and heatmap is generated.
+For segmentation the equivalent segment mask will be given instead.
+Click clear, browse or reload page to perform predictions for other images.
+
+Models with their weights can be found at https://www.kaggle.com/itsmariodias/pretrained-datasets
+ 
+
