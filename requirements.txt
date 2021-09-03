@@ -1,4 +1,4 @@
 Flask>=1.1.1
 gunicorn>=19.9.0
-Tensorflow.Keras>=2.6
+Tensorflow>=2.6
 Keras>=2.6.0
