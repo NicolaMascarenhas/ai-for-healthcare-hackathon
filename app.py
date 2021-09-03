@@ -52,8 +52,8 @@ def ensemble_predictions(members, weights, testX):
     return int(result), pred_proba
 
 #OCT MODEL
-VGG_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets/vgg_kermanyduketehran.h5'  #'models/vgg_kermany+duke+tehran.h5'
-OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets/opticnet_kermanyduketehran.h5' #'models/opticnet_kermany+duke+tehran.h5'
+VGG_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets?select=vgg_kermanyduketehran.h5'  #'models/vgg_kermany+duke+tehran.h5'
+OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets?select=opticnet_kermanyduketehran.h5' #'models/opticnet_kermany+duke+tehran.h5'
 
 # #FUNDUS MODEL
 # FUNDUS_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
@@ -61,7 +61,7 @@ OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets/op
 # fundus_model.make_predict_function()
 
 #SEGMENT MODEL
-SEGMENT_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets/unet_aroi.hdf5' #'models/unet_aroi.hdf5'
+SEGMENT_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets?select=unet_aroi.hdf5' #'models/unet_aroi.hdf5'
 segment_model = load_model(SEGMENT_MODEL_PATH, custom_objects={'iou': iou})
 segment_model.make_predict_function()
 
