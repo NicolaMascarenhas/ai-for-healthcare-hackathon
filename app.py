@@ -194,3 +194,8 @@ if __name__ == '__main__':
     # Serve the app with gevent
     # http_server = WSGIServer(('0.0.0.0', 5000), app)
     # http_server.serve_forever()
+"""
+    app.listen(process.env.PORT || '5002', function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+"""
