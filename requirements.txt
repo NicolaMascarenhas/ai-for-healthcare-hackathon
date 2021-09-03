@@ -6,9 +6,9 @@ Gevent>=21.8.0
 gunicorn>=19.9.0
 Pillow>=5
 matplotlib>=2.5
-numpy>=1.19.2
+numpy==1.19.2
 itsdangerous>=2.0
 Jinja2>=3.0
-MarkupSafe==1.1.1
+MarkupSafe>=2.0
 Werkzeug>=2.0
 regex
