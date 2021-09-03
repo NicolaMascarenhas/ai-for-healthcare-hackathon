@@ -1,7 +1,7 @@
 flask>=1.1.1
 gunicorn>=19.9.0
 tensorflow-cpu>=2.5
-Keras>=2.6.0
+Keras==2.3.0
 Gevent>=21.8.0
 gunicorn>=19.9.0
 Pillow>=5
@@ -12,3 +12,4 @@ Jinja2>=3.0
 MarkupSafe>=2.0
 Werkzeug>=2.0
 regex
+pybase64
