@@ -3,7 +3,7 @@ import sys
 
 # Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
-#from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 
 # TensorFlow and tf.keras
 import tensorflow as tf
@@ -189,11 +189,11 @@ def predict():
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(port=5002, threaded=False)
+    app.run(port=33507, threaded=False)
 
     # Serve the app with gevent
-    # http_server = WSGIServer(('0.0.0.0', 5000), app)
-    # http_server.serve_forever()
+    http_server = WSGIServer(('0.0.0.0',33507), app)
+    http_server.serve_forever()
 """
     app.listen(process.env.PORT || '5002', function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
