@@ -61,7 +61,7 @@ OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets?se
 # fundus_model.make_predict_function()
 
 #SEGMENT MODEL
-SEGMENT_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets?select=unet_aroi.hdf5' #'models/unet_aroi.hdf5'
+SEGMENT_MODEL_PATH = '.git/lfs/objects/1d/52/1d526fa0faeb9635a75b099e32f545298028f9966653365d9a6101d1cb82ee3d' #'models/unet_aroi.hdf5'
 segment_model = load_model(SEGMENT_MODEL_PATH, custom_objects={'iou': iou})
 segment_model.make_predict_function()
 
