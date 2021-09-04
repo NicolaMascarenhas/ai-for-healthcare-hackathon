@@ -13,3 +13,4 @@ MarkupSafe>=2.0
 Werkzeug>=2.0
 regex
 pybase64
+git-lfs
