@@ -53,8 +53,10 @@ def ensemble_predictions(members, weights, testX):
     return int(result), pred_proba
 
 #OCT MODEL
+"""
 VGG_MODEL_PATH ='models/vgg_kermany+duke+tehran.h5'
 OPTICNET_MODEL_PATH ='models/opticnet_kermany+duke+tehran.h5'
+"""
 
 # #FUNDUS MODEL
 # FUNDUS_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
@@ -68,7 +70,7 @@ segment_model.make_predict_function()
 
 print('Models loaded. Start serving...')
 choice = 0
-
+"""
 members = [load_model(VGG_MODEL_PATH), load_model(OPTICNET_MODEL_PATH)]
 
 def model_predict_oct(img, weights, members):
@@ -81,6 +83,7 @@ def model_predict_oct(img, weights, members):
 
     pred_class, proba = ensemble_predictions(members, weights, x)
     return pred_class, proba
+"""  
 
 # def model_predict_fundus(img, model):
 #     img_resized = img.resize((224, 224))
@@ -175,17 +178,20 @@ def predict():
             # img.save("./uploads/image.png")
 
             # Make prediction
+            """
             pred_class, pred_proba = model_predict_oct(img, weights, members)
 
             heatmap = generate_heatmap(img, VGG_MODEL_PATH, 'block5_conv3', 'dense_23')
             heatmap = pil_tobase64(heatmap)
+            """
             # result = str(pred_class[0][0][1])               # Convert to string
             # result = result.replace('_', ' ').capitalize()
 
             
             # Serialize the result, you can add additional fields
+            """
             return jsonify(result=class_labels[pred_class], probability=pred_proba, heatmap = heatmap)
-
+            """
     return None
 
 
