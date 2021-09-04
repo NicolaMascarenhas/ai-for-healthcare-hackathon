@@ -1,5 +1,6 @@
 import os
 import sys
+import requests
 
 # Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
@@ -52,8 +53,8 @@ def ensemble_predictions(members, weights, testX):
     return int(result), pred_proba
 
 #OCT MODEL
-VGG_MODEL_PATH = 'https://www.kaggle.com/itsmariodias/pretrained-datasets?select=vgg_kermanyduketehran.h5'  #'models/vgg_kermany+duke+tehran.h5'
-OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets?select=opticnet_kermanyduketehran.h5' #'models/opticnet_kermany+duke+tehran.h5'
+VGG_MODEL_PATH ='models/vgg_kermany+duke+tehran.h5'
+OPTICNET_MODEL_PATH ='models/opticnet_kermany+duke+tehran.h5'
 
 # #FUNDUS MODEL
 # FUNDUS_MODEL_PATH = 'models/opticnet_kermany+duke+tehran.h5'
@@ -61,7 +62,7 @@ OPTICNET_MODEL_PATH ='https://www.kaggle.com/itsmariodias/pretrained-datasets?se
 # fundus_model.make_predict_function()
 
 #SEGMENT MODEL
-SEGMENT_MODEL_PATH = '1d526fa0fa * models/unet_aroi.hdf5' #'models/unet_aroi.hdf5'
+SEGMENT_MODEL_PATH = 'models/unet_aroi.hdf5' #httpS:kaggle.... https error #'1d526fa0fa * models/unet_aroi.hdf5' #''
 segment_model = load_model(SEGMENT_MODEL_PATH, custom_objects={'iou': iou})
 segment_model.make_predict_function()
 
@@ -190,7 +191,7 @@ def predict():
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(port=33507, threaded=False)
+    #app.run(port=33507, threaded=False)
 
     # Serve the app with gevent
     http_server = WSGIServer(('0.0.0.0',33507), app)
