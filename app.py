@@ -52,10 +52,10 @@ def ensemble_predictions(members, weights, testX):
     result = np.argmax(summed, axis=1)
     return int(result), pred_proba
 
-#OCT MODEL
+#OCT MODEL 
 
-VGG_MODEL_PATH ='https://github.com/NicolaMascarenhas/ai-for-healthcare-hackathon.git/lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be' #'lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be' #'.git/lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be'
-OPTICNET_MODEL_PATH ='https://github.com/NicolaMascarenhas/ai-for-healthcare-hackathon.git/lfs/4705463a29349d1ab12f9268d6a64212c2120aa29d7a6238e20f237f840ffe94' #'/lfs/4705463a29349d1ab12f9268d6a64212c2120aa29d7a6238e20f237f840ffe94'
+VGG_MODEL_PATH ='https://github.com/NicolaMascarenhas/ai-for-healthcare-hackathon.git/info/lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be' #'lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be' #'.git/lfs/865a3014699edf6ffd6c99c74f85dab5ce29c45cefff2466cea88a202df266be'
+OPTICNET_MODEL_PATH ='https://github.com/NicolaMascarenhas/ai-for-healthcare-hackathon.git/info/lfs/4705463a29349d1ab12f9268d6a64212c2120aa29d7a6238e20f237f840ffe94' #'/lfs/4705463a29349d1ab12f9268d6a64212c2120aa29d7a6238e20f237f840ffe94'
 
 
 # #FUNDUS MODEL
